@@ -1,5 +1,5 @@
 import React from "react";
-import { View,TouchableOpacity } from "react-native";
+import { Text,View,TouchableOpacity } from "react-native";
 import { Ionicons, FontAwesome, AntDesign } from "@expo/vector-icons";
 
 export default function SplashScreen(params) {
@@ -33,7 +33,7 @@ export default function SplashScreen(params) {
           backgroundColor: "black",
         }}
       >
-        <AntDesign name="next" size={24} color="white" />
+        {/* <AntDesign name="next" size={24} color="white" /> */}
         <Text style={{ paddingLeft: 10, color: "white" }}>Get Started</Text>
       </TouchableOpacity>
         </View>

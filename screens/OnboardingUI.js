@@ -1,12 +1,19 @@
- import React from "react";
- import {View, Text, Button, StyleSheet, Image} from 'react-native';
- import Onboarding from 'react-native-onboarding-swiper';
+import React from "react";
+import {View, Text, Button, StyleSheet, Image} from 'react-native';
+import Onboarding from 'react-native-onboarding-swiper';
 
-
- const OnboardingScreen = ({navigation}) => {
-     return(
+const Done = ({...props})=>(
+    <Button
+        title='Done'
+        color="black"
+        {...props}
+    />
+);
+const OnboardingScreen = ({navigation}) => {
+    return(
             <Onboarding
-            onSkip={()=>navigation.navigate("Login")}
+            DoneButtonComponent={Done}
+            onSkip={()=>navigation.replace("Login")}
             onDone={()=>navigation.navigate("Login")}
             pages={[
         {
@@ -43,7 +50,7 @@
      );
  }
 
- export default OnboardingScreen;
+export default OnboardingScreen;
 
 
 const colors = {
@@ -51,7 +58,7 @@ const colors = {
     'yellow': '#fdeb93',
     'light-pink': '#e9bcbe'
 }
- const styles = StyleSheet.create({
+const styles = StyleSheet.create({
      container: {
          flex: 1,
          alignItems: 'center',

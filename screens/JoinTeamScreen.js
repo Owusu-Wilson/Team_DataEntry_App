@@ -2,32 +2,21 @@ import React from "react";
 import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
-export default function LoginScreen(params) {
+export default function JoinTeam(params) {
   const navigation = params.navigation;
   return (
     <View
       style={{
-        backgroundColor: "#e9bcbe",
+        backgroundColor: "white",
         flex: 1,
+        paddingTop:30,
         paddingHorizontal: 20,
-        justifyContent: "center",
+        justifyContent: "flex-start",
         alignItems: "center",
       }}
     >
-      <Image
-        style={{
-          transform: [{ rotate: "45deg" }],
-          borderRadius: 20,
-          marginBottom: 60,
-          width: 200,
-          height: 200,
-        }}
-        source={{
-          uri: "https://images.unsplash.com/photo-1633114127188-99b4dd741180?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80",
-        }}
-      />
-      <Text style={{ fontSize: 30, color: "grey" }}>Welcome to</Text>
-      <Text style={{ fontSize: 40, fontWeight: "bold" }}>Team Sync</Text>
+
+      <Text style={{ fontSize: 40, fontWeight: "bold" }}>Join a Team by Link</Text>
       <View style={{}}>
         <TextInput
           style={{
@@ -36,7 +25,7 @@ export default function LoginScreen(params) {
             borderWidth: 0.7,
             paddingHorizontal: 60,
           }}
-          placeholder="Enter your username"
+          placeholder="Paste team link ..."
         />
       </View>
       <View style={{ marginTop: 10,}}>
@@ -53,11 +42,14 @@ export default function LoginScreen(params) {
             borderWidth: 0.7,
             paddingHorizontal: 60,
           }}
-          placeholder="Enter your password"
+          placeholder="Enter the pin ..."
+          inlineImageLeft="addfile"
+          keyboardType='number-pad'
         />
       </View>
       <TouchableOpacity
         onPress={() => {
+          alert("You have joined successfully")
           navigation.navigate("Home");
         }}
         style={{
@@ -71,23 +63,10 @@ export default function LoginScreen(params) {
         }}
       >
         <AntDesign name="login" size={24} color="white" />
-        <Text style={{ paddingLeft: 10, color: "white" }}>Login</Text>
+        <Text style={{ paddingLeft: 10, color: "white" }}>Join</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity
-      onPress={() => {
-        navigation.navigate("SignUp");
-      }}
-       style={{
-        padding: 15,
-        paddingHorizontal: 80,
-        marginTop: 7,
-        alignItems: "center",
-        flexDirection: "row",
-      }}
-      >
-        <Text style={{ paddingLeft: 10, color: "black",fontWeight:'bold'}}>Or SignUp now!</Text>
-      </TouchableOpacity>
+     
     </View>
   );
 }

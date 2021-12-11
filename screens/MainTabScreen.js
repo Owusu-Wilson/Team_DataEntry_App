@@ -5,27 +5,24 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
-
-import UpdatesScreen from './UpdatesScreen';
+import HomeScreen from './HomeScreen';
+import DetailsScreen from './DetailsScreen';
 import ExploreScreen from './ExploreScreen';
 import ProfileScreen from './ProfileScreen';
-import DashBoard from './DashBoardScreen';
-
 
 const HomeStack = createStackNavigator();
 const DetailsStack = createStackNavigator();
 
 const Tab = createMaterialBottomTabNavigator();
 
-const 
-HomeScreen = () => (
+const MainTabScreen = () => (
     <Tab.Navigator
       initialRouteName="DashBoard"
       activeColor="#fff"
     >
       <Tab.Screen
         name="DashBoard"
-        component={DashBoard}
+        component={HomeStackScreen}
         options={{
           tabBarLabel: 'Home',
           tabBarColor: '#009387',
@@ -36,7 +33,7 @@ HomeScreen = () => (
       />
       <Tab.Screen
         name="Notifications"
-        component={UpdatesScreen}
+        component={DetailsStackScreen}
         options={{
           tabBarLabel: 'Updates',
           tabBarColor: '#1f65ff',
@@ -70,8 +67,7 @@ HomeScreen = () => (
     </Tab.Navigator>
 );
 
-export default 
-HomeScreen;
+export default MainTabScreen;
 
 const HomeStackScreen = ({navigation}) => (
 <HomeStack.Navigator screenOptions={{
@@ -83,11 +79,6 @@ const HomeStackScreen = ({navigation}) => (
         fontWeight: 'bold'
         }
     }}>
-          <HomeStack.Screen name="DashBoard" component={DetailsScreen} options={{
-        headerLeft: () => (
-            <Icon.Button name="ios-menu" size={25} backgroundColor="#1f65ff" onPress={() => navigation.openDrawer()}></Icon.Button>
-        )
-        }} />
 
 </HomeStack.Navigator>
 );
