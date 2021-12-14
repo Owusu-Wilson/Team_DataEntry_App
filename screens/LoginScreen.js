@@ -58,7 +58,7 @@ export default function LoginScreen(params) {
       </View>
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate("Home");
+          navigation.navigate("Main");
         }}
         style={{
           padding: 15,

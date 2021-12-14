@@ -5,10 +5,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import HomeScreen from './HomeScreen';
-import DetailsScreen from './DetailsScreen';
-import ExploreScreen from './ExploreScreen';
+import Home from './HomeScreen';
 import ProfileScreen from './ProfileScreen';
+import BookmarkScreen from './BookmarkScreen'
 
 const HomeStack = createStackNavigator();
 const DetailsStack = createStackNavigator();
@@ -22,7 +21,7 @@ const MainTabScreen = () => (
     >
       <Tab.Screen
         name="DashBoard"
-        component={HomeStackScreen}
+        component={BookmarkScreen}
         options={{
           tabBarLabel: 'Home',
           tabBarColor: '#009387',
@@ -31,7 +30,7 @@ const MainTabScreen = () => (
           ),
         }}
       />
-      <Tab.Screen
+      {/* <Tab.Screen
         name="Notifications"
         component={DetailsStackScreen}
         options={{
@@ -41,7 +40,7 @@ const MainTabScreen = () => (
             <Icon name="ios-notifications" color={color} size={26} />
           ),
         }}
-      />
+      /> */}
       <Tab.Screen
         name="Profile"
         component={ProfileScreen}
@@ -53,7 +52,7 @@ const MainTabScreen = () => (
           ),
         }}
       />
-      <Tab.Screen
+      {/* <Tab.Screen
         name="Explore"
         component={ExploreScreen}
         options={{
@@ -63,41 +62,41 @@ const MainTabScreen = () => (
             <Icon name="ios-aperture" color={color} size={26} />
           ),
         }}
-      />
+      /> */}
     </Tab.Navigator>
 );
 
 export default MainTabScreen;
 
-const HomeStackScreen = ({navigation}) => (
-<HomeStack.Navigator screenOptions={{
-        headerStyle: {
-        backgroundColor: '#009387',
-        },
-        headerTintColor: '#fff',
-        headerTitleStyle: {
-        fontWeight: 'bold'
-        }
-    }}>
+// const HomeStackScreen = ({navigation}) => (
+// <HomeStack.Navigator screenOptions={{
+//         headerStyle: {
+//         backgroundColor: '#009387',
+//         },
+//         headerTintColor: '#fff',
+//         headerTitleStyle: {
+//         fontWeight: 'bold'
+//         }
+//     }}>
 
-</HomeStack.Navigator>
-);
+// </HomeStack.Navigator>
+// );
 
-const DetailsStackScreen = ({navigation}) => (
-<DetailsStack.Navigator screenOptions={{
-        headerStyle: {
-        backgroundColor: '#1f65ff',
-        },
-        headerTintColor: '#fff',
-        headerTitleStyle: {
-        fontWeight: 'bold'
-        }
-    }}>
-        <DetailsStack.Screen name="Details" component={DetailsScreen} options={{
-        headerLeft: () => (
-            <Icon.Button name="ios-menu" size={25} backgroundColor="#1f65ff" onPress={() => navigation.openDrawer()}></Icon.Button>
-        )
-        }} />
-</DetailsStack.Navigator>
-);
+// const DetailsStackScreen = ({navigation}) => (
+// <DetailsStack.Navigator screenOptions={{
+//         headerStyle: {
+//         backgroundColor: '#1f65ff',
+//         },
+//         headerTintColor: '#fff',
+//         headerTitleStyle: {
+//         fontWeight: 'bold'
+//         }
+//     }}>
+//         <DetailsStack.Screen name="Details" component={DetailsScreen} options={{
+//         headerLeft: () => (
+//             <Icon.Button name="ios-menu" size={25} backgroundColor="#1f65ff" onPress={() => navigation.openDrawer()}></Icon.Button>
+//         )
+//         }} />
+// </DetailsStack.Navigator>
+// );
   

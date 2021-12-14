@@ -22,57 +22,56 @@ export const Card = ({ item_ }) => {
     <TouchableOpacity onPress={() => navigation.navigate(item_.screen, item_)}>
       <View style={style.card}>
 
-        <View
+        {/* <View
           style={{
-            alignContent: "center",
+            alignContent: "space-between",
             flex: 1,
-            resizeMode: "contain",
+            resizeMode: 'contain',
             flexDirection: 'column'
           }}
-        >
+        > */}
   
-          <Image
-            style={{ marginTop:10, height:'100%',width:'auto', borderRadius:20 }}
+          {/* <Image
+            style={{ marginTop:10, height:'100%',width:'auto', borderRadius:3 }}
             source={item_.img}
-          />
-        </View>
-        <View style={{}}></View>
+          /> */}
         <Text
           style={{
             fontWeight: "bold",
-            fontSize: 14,
-            marginTop: 10,
+            fontSize: 20,
+            marginTop: 20,
             color: "white",
+            position: 'relative',
+            alignSelf: 'center'
+
           }}
         >
           {item_.name}
         </Text>
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-            marginTop: 5,
-          }}
-        >
-
-
         </View>
-      </View>
+        {/* <View style={{}}></View> */}
+
+      {/* </View> */}
     </TouchableOpacity>
   );
 };
 const style = StyleSheet.create({
   card: {
-    height: 200,
-    backgroundColor: "#202020",
+    height: 150,
+    backgroundColor: "#180829",
     elevation: 10,
-    width,
+    width:300,
     marginHorizontal: 4,
     marginBottom: 20,
     padding: 15,
     borderRadius: 10,
     shadowColor: "black",
     shadowOpacity: 1,
+    alignSelf: 'center', 
+    alignItems: 'center',
+    alignContent: 'center'
     
   },
 });
+
+

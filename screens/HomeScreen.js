@@ -1,112 +1,101 @@
-import React from 'react';
-
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import { createStackNavigator } from '@react-navigation/stack';
-
-import Icon from 'react-native-vector-icons/Ionicons';
-
-
-import UpdatesScreen from './UpdatesScreen';
-import ExploreScreen from './ExploreScreen';
-import ProfileScreen from './ProfileScreen';
-import DashBoard from './DashBoardScreen';
+//IMPORTS FROM PACKAES AND LIBRARIES
+import React, { useState } from "react";
+import { AntDesign } from "@expo/vector-icons";
+import SettingsScreen from './SettingsScreen';
+import { Component } from 'react';
+import { WebView } from 'react-native';
 
 
-const HomeStack = createStackNavigator();
-const DetailsStack = createStackNavigator();
-
-const Tab = createMaterialBottomTabNavigator();
-
-const 
-HomeScreen = () => (
-    <Tab.Navigator
-      initialRouteName="DashBoard"
-      activeColor="#fff"
-    >
-      <Tab.Screen
-        name="DashBoard"
-        component={DashBoard}
-        options={{
-          tabBarLabel: 'Home',
-          tabBarColor: '#009387',
-          tabBarIcon: ({ color }) => (
-            <Icon name="ios-home" color={color} size={26} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Notifications"
-        component={UpdatesScreen}
-        options={{
-          tabBarLabel: 'Updates',
-          tabBarColor: '#1f65ff',
-          tabBarIcon: ({ color }) => (
-            <Icon name="ios-notifications" color={color} size={26} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Profile"
-        component={ProfileScreen}
-        options={{
-          tabBarLabel: 'Profile',
-          tabBarColor: '#694fad',
-          tabBarIcon: ({ color }) => (
-            <Icon name="ios-person" color={color} size={26} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Explore"
-        component={ExploreScreen}
-        options={{
-          tabBarLabel: 'Explore',
-          tabBarColor: '#d02860',
-          tabBarIcon: ({ color }) => (
-            <Icon name="ios-aperture" color={color} size={26} />
-          ),
-        }}
-      />
-    </Tab.Navigator>
-);
-
-export default 
-HomeScreen;
-
-const HomeStackScreen = ({navigation}) => (
-<HomeStack.Navigator screenOptions={{
-        headerStyle: {
-        backgroundColor: '#009387',
-        },
-        headerTintColor: '#fff',
-        headerTitleStyle: {
-        fontWeight: 'bold'
-        }
-    }}>
-          <HomeStack.Screen name="DashBoard" component={DetailsScreen} options={{
-        headerLeft: () => (
-            <Icon.Button name="ios-menu" size={25} backgroundColor="#1f65ff" onPress={() => navigation.openDrawer()}></Icon.Button>
-        )
-        }} />
-
-</HomeStack.Navigator>
-);
-
-const DetailsStackScreen = ({navigation}) => (
-<DetailsStack.Navigator screenOptions={{
-        headerStyle: {
-        backgroundColor: '#1f65ff',
-        },
-        headerTintColor: '#fff',
-        headerTitleStyle: {
-        fontWeight: 'bold'
-        }
-    }}>
-        <DetailsStack.Screen name="Details" component={DetailsScreen} options={{
-        headerLeft: () => (
-            <Icon.Button name="ios-menu" size={25} backgroundColor="#1f65ff" onPress={() => navigation.openDrawer()}></Icon.Button>
-        )
-        }} />
-</DetailsStack.Navigator>
-);
+import {
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  SafeAreaView,
+  StyleSheet,
+  TextInput,
+  Dimensions,
+  FlatList,
+  ImageBackground,
+  ScrollView,
+  Button
   
+} from "react-native";
+
+// LOCAL IMPORTS FROM PROJECT FILES
+import {dashes } from "../data/dashes";
+import { Card } from "../components/Card";
+import MainTabScreen from "./MainTabScreen";
+
+// VARIABLES
+const topImg = require("../images/dashboard.jpg")
+
+export default function Home({ navigation }) {
+  return (
+    // <ScrollView>
+    <SafeAreaView
+    style={styles.container}
+    >
+
+        <View style={{}}>
+          <Image
+            style={styles.top_image}
+            source={topImg} />
+        </View>
+
+        <Text style={styles.caption}></Text>
+        {/* //SELECT TO START */}
+
+        <FlatList
+          style={styles.lists}
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{
+            marginTop: 10,
+            paddingBottom: 50,
+          }}
+
+          numColumns={1}
+          data={dashes}
+          renderItem={({ item }) => <Card item_={item} />} />
+      </SafeAreaView>
+      // </ScrollView>
+  );
+}
+
+const colors = {
+  'cyan': '#a6e4d0',
+  'yellow': '#fdeb93',
+  'light-pink': '#e9bcbe'
+}
+
+const styles = StyleSheet.create({
+  container:{ flex: 1,
+    paddingHorizontal: 0,
+    backgroundColor: 'white',
+    
+  },
+
+  top_image: {
+    marginTop:10,
+    marginBottom:80,
+    height:200,
+    backgroundColor: colors['yellow'],
+    marginBottom:0,
+    width:'auto',
+    borderRadius:0,
+  },
+  caption:{
+    fontSize:10,
+
+    fontWeight:'bold',
+    marginTop:10,
+    letterSpacing:1.5,
+    color: 'orange',
+    shadowColor: 'gray',
+    textShadowColor: 'gray',
+    shadowOpacity: 1
+
+    
+  }
+
+  });

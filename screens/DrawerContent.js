@@ -1,3 +1,4 @@
+// PACKAGES AND LIBRARIES IMPORTS
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import {
@@ -16,20 +17,28 @@ import {
     DrawerItem
 } from '@react-navigation/drawer';
 
+// ICONS IMPORTS
+import { AntDesign } from "@expo/vector-icons";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+// INTERNAL PROJECT FILES IMPORTS
 
-import{ AuthContext } from '../components/context';
 
+// VARIABLES
+let username = "John Sparrows";
+let user_team_name = "@slabsgh" 
+let current_team = 'epsu_legon'
+let num_currTeam_members = 30
 export function DrawerContent(props) {
-
     const paperTheme = useTheme();
 
-    // const { signOut, toggleTheme } = React.useContext(AuthContext);
+    // const {  toggleTheme } = React.useContext(AuthContext);
+
 
     return(
         <View style={{flex:1}}>
             <DrawerContentScrollView {...props}>
                 <View style={styles.drawerContent}>
+                <Drawer.Section style={styles.drawerSection}>
                     <View style={styles.userInfoSection}>
                         <View style={{flexDirection:'row',marginTop: 15}}>
                             <Avatar.Image 
@@ -39,23 +48,23 @@ export function DrawerContent(props) {
                                 size={50}
                             />
                             <View style={{marginLeft:15, flexDirection:'column'}}>
-                                <Title style={styles.title}>John Doe</Title>
-                                <Caption style={styles.caption}>@j_doe</Caption>
+                                <Title style={styles.title}>{username}</Title>
+                                <Caption style={styles.caption}>{user_team_name}</Caption>
                             </View>
                         </View>
 
                         <View style={styles.row}>
                             <View style={styles.section}>
-                                <Paragraph style={[styles.paragraph, styles.caption]}>80</Paragraph>
-                                <Caption style={styles.caption}>Following</Caption>
+                                <Paragraph style={[styles.paragraph, styles.caption]}>5</Paragraph>
+                                <Caption style={styles.caption}>Groups</Caption>
                             </View>
                             <View style={styles.section}>
-                                <Paragraph style={[styles.paragraph, styles.caption]}>100</Paragraph>
-                                <Caption style={styles.caption}>Followers</Caption>
+                                <Paragraph style={[styles.paragraph, styles.caption]}>{num_currTeam_members} members</Paragraph>
+                                <Caption style={styles.caption}>{current_team}</Caption>
                             </View>
                         </View>
                     </View>
-
+                    </Drawer.Section>
                     <Drawer.Section style={styles.drawerSection}>
                         <DrawerItem 
                             icon={({color, size}) => (
@@ -81,25 +90,18 @@ export function DrawerContent(props) {
                         />
                         <DrawerItem 
                             icon={({color, size}) => (
-                                <Icon 
-                                name="bookmark-outline" 
-                                color={color}
-                                size={size}
-                                />
+                                <AntDesign name="codesquare" size={size} color={color} />
                             )}
-                            label="Bookmarks"
-                            onPress={() => {props.navigation.navigate('BookmarkScreen')}}
+                            label="Admin Tools"
+                            onPress={() => {props.navigation.navigate('Admin')}}
                         />
                         <DrawerItem 
                             icon={({color, size}) => (
-                                <Icon 
-                                name="settings-outline" 
-                                color={color}
-                                size={size}
-                                />
+                                <AntDesign name="setting" size={size} color={color} />
+
                             )}
                             label="Settings"
-                            onPress={() => {props.navigation.navigate('SettingsScreen')}}
+                            onPress={() => {props.navigation.navigate('Settings')}}
                         />
                         <DrawerItem 
                             icon={({color, size}) => (
@@ -109,11 +111,11 @@ export function DrawerContent(props) {
                                 size={size}
                                 />
                             )}
-                            label="Support"
-                            onPress={() => {props.navigation.navigate('SupportScreen')}}
+                            label="About"
+                            onPress={() => {props.navigation.navigate('About')}}
                         />
                     </Drawer.Section>
-                    {/* <Drawer.Section title="Preferences">
+                    <Drawer.Section title="Preferences">
                         <TouchableRipple onPress={() => {toggleTheme()}}>
                             <View style={styles.preference}>
                                 <Text>Dark Theme</Text>
@@ -122,7 +124,7 @@ export function DrawerContent(props) {
                                 </View>
                             </View>
                         </TouchableRipple>
-                    </Drawer.Section> */}
+                    </Drawer.Section>
                 </View>
             </DrawerContentScrollView>
             {/* <Drawer.Section style={styles.bottomDrawerSection}>

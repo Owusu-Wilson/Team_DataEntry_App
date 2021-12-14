@@ -1,6 +1,10 @@
 import React from "react";
-import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
+
+import { View, Text, Image, TextInput, TouchableOpacity} from "react-native";
 import { AntDesign } from "@expo/vector-icons";
+import { Component } from 'react';
+
+
 
 export default function ViewData(params) {
   const navigation = params.navigation;
@@ -12,12 +16,12 @@ export default function ViewData(params) {
         paddingTop: 30,
         paddingHorizontal: 20,
         justifyContent: "flex-start",
-        alignItems: "center",
+        // alignItems: "center",
       }}
     >
 
-      <Text style={{ fontSize: 40, fontWeight: "bold" }}>View Data and Statistics</Text>
-      
+
+      <Text style={{ fontSize: 40, fontWeight: "bold"}}>View Data and Statistics</Text>
     </View>
   );
 }
