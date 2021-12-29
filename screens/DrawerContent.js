@@ -24,12 +24,17 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
 // VARIABLES
+const avatar_icon = require("../images/default_avatar.png")
 let username = "John Sparrows";
 let user_team_name = "@slabsgh" 
 let current_team = 'epsu_legon'
 let num_currTeam_members = 30
+
+function toggleTheme(){
+    alert("Theme Changed")
+}
 export function DrawerContent(props) {
-    const paperTheme = useTheme();
+    const theme = useTheme();
 
     // const {  toggleTheme } = React.useContext(AuthContext);
 
@@ -42,9 +47,9 @@ export function DrawerContent(props) {
                     <View style={styles.userInfoSection}>
                         <View style={{flexDirection:'row',marginTop: 15}}>
                             <Avatar.Image 
-                                source={{
-                                    uri: 'https://api.adorable.io/avatars/50/abott@adorable.png'
-                                }}
+                                source={
+                                    avatar_icon
+                                }
                                 size={50}
                             />
                             <View style={{marginLeft:15, flexDirection:'column'}}>
@@ -116,11 +121,16 @@ export function DrawerContent(props) {
                         />
                     </Drawer.Section>
                     <Drawer.Section title="Preferences">
-                        <TouchableRipple onPress={() => {toggleTheme()}}>
+                        <TouchableRipple 
+                            // onPress={() => {toggleTheme()}}
+                            >
                             <View style={styles.preference}>
                                 <Text>Dark Theme</Text>
                                 <View pointerEvents="none">
-                                    <Switch value={paperTheme.dark}/>
+                                    <Switch 
+                                    // value={theme.mode === 'dark'}
+                                    // onValueChange={value => theme.setMode(value ? 'dark' : 'light')}
+                                    />
                                 </View>
                             </View>
                         </TouchableRipple>

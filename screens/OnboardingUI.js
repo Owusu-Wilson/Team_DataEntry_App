@@ -29,7 +29,7 @@ const OnboardingScreen = ({navigation}) => {
         {
             // the 2nd onboarding page
             backgroundColor: colors.yellow,
-            image: <Image source={require('../images/board2.png')} />,
+            image: <Image source={require('../assets/onboarding-img1.png')} />,
             title: 'Get Set!',
             subtitle: 'Sync data from multiple demographers.',
         },

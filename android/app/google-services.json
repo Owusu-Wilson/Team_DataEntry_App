@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "876927340054",
+    "project_id": "teams-data-entry-app",
+    "storage_bucket": "teams-data-entry-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876927340054:android:c2324ae739033fcb6eef37",
+        "android_client_info": {
+          "package_name": "com.teamSync"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "876927340054-6u3fcksd59m796thfn09714h7rmdtnbl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDojjqs4dlpXYa6DwpveNRRacEblhlUIQk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "876927340054-6u3fcksd59m796thfn09714h7rmdtnbl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "876927340054-tu2qspdknh9a8sjjjf6kd4krtfrueckh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.slabsgh.teamsync"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -10,13 +10,13 @@ import Home from './HomeScreen';
 import SettingsScreen from './SettingsScreen';
 import ProfileScreen from './ProfileScreen';
 import AboutScreen from "./AboutScreen";
-import AdminScreen from "./AdminScreen";
+import AdminScreen from "./admin/AdminScreen";
 import { DrawerContent } from "./DrawerContent";
 
 
 const Drawer = createDrawerNavigator();
 
-export default function LandingScreen() {
+export default function CustomDrawerNavigator() {
   return (
     
       <Drawer.Navigator initialRouteName="Home" drawerContent={props=><DrawerContent {...props}/>}>

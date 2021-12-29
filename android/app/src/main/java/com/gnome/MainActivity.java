@@ -1,4 +1,4 @@
-package com.gnome;
+package com.teamSync;
 
 import android.os.Bundle;
 

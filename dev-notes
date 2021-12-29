@@ -1,4 +1,4 @@
 To change the name of the app:
 
-    1. Change all instances of Gnome to {App-name}
-    2. Change all instances of gnome to {app-name}
+    1. Change all instances of teamSync to {App-name}
+    2. Change all instances of teamSync to {app-name}

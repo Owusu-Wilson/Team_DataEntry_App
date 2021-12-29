@@ -10,9 +10,11 @@ import {
 import { MaterialIcons } from "@expo/vector-icons";
 
 import { useNavigation } from "@react-navigation/native";
+import { AntDesign } from "@expo/vector-icons";
 
 
-
+const size = 40;
+const color = 'white';
 const width = Dimensions.get("screen").width / 2 - 30;
 
 export const Card = ({ item_ }) => {
@@ -42,12 +44,14 @@ export const Card = ({ item_ }) => {
             marginTop: 20,
             color: "white",
             position: 'relative',
-            alignSelf: 'center'
-
+            alignSelf: 'center',
+            marginBottom: 20
+            
           }}
         >
           {item_.name}
         </Text>
+        <AntDesign name={item_.icon} size={size} color={color} />
         </View>
         {/* <View style={{}}></View> */}
 

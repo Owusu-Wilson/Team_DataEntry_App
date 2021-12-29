@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "Gnome.app"
-               BlueprintName = "Gnome"
-               ReferencedContainer = "container:Gnome.xcodeproj">
+               BuildableName = "teamSync.app"
+               BlueprintName = "teamSync"
+               ReferencedContainer = "container:teamSync.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "GnomeTests.xctest"
-               BlueprintName = "GnomeTests"
-               ReferencedContainer = "container:Gnome.xcodeproj">
+               BuildableName = "teamSyncTests.xctest"
+               BlueprintName = "teamSyncTests"
+               ReferencedContainer = "container:teamSync.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Gnome.app"
-            BlueprintName = "Gnome"
-            ReferencedContainer = "container:Gnome.xcodeproj">
+            BuildableName = "teamSync.app"
+            BlueprintName = "teamSync"
+            ReferencedContainer = "container:teamSync.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Gnome.app"
-            BlueprintName = "Gnome"
-            ReferencedContainer = "container:Gnome.xcodeproj">
+            BuildableName = "teamSync.app"
+            BlueprintName = "teamSync"
+            ReferencedContainer = "container:teamSync.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

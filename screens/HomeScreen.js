@@ -5,6 +5,8 @@ import SettingsScreen from './SettingsScreen';
 import { Component } from 'react';
 import { WebView } from 'react-native';
 
+import { createMaterialBottomTabNavigator, MaterialBottomTabView } from '@react-navigation/material-bottom-tabs';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import {
   Text,
@@ -25,18 +27,83 @@ import {
 // LOCAL IMPORTS FROM PROJECT FILES
 import {dashes } from "../data/dashes";
 import { Card } from "../components/Card";
-import MainTabScreen from "./MainTabScreen";
-
+import AboutScreen from './AboutScreen'
+import ExploreScreen from "./ExploreScreen";
 // VARIABLES
 const topImg = require("../images/dashboard.jpg")
+
+// DEFINING THE BUTTOM NAVIGATOR
+const Tab = createMaterialBottomTabNavigator();
+
+const MainTabScreen = () => (
+    <Tab.Navigator
+      initialRouteName="DashBoard"
+      activeColor="#fff"
+    >
+      <Tab.Screen
+        name="DashBoard"
+        component={ExploreScreen}
+        options={{
+          tabBarLabel: 'Home',
+          tabBarColor: '#009387',
+          tabBarIcon: ({ color }) => (
+            <Icon name="ios-home" color={color} size={26} />
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name="Profile"
+        component={AboutScreen}
+        options={{
+          tabBarLabel: 'Profile',
+          tabBarColor: '#694fad',
+          tabBarIcon: ({ color }) => (
+            <Icon name="ios-person" color={color} size={26} />
+          ),
+        }}
+      />
+    
+    </Tab.Navigator>
+);
+
+
 
 export default function Home({ navigation }) {
   return (
     // <ScrollView>
-    <SafeAreaView
+    <View
     style={styles.container}
     >
+<Tab.Navigator
+      initialRouteName="DashBoard"
+      activeColor="#fff"
+    >
+      <Tab.Screen
+        name="DashBoard"
+        component={ExploreScreen}
+        options={{
+          tabBarLabel: 'Home',
+          tabBarColor: '#009387',
+          tabBarIcon: ({ color }) => (
+            <Icon name="ios-home" color={color} size={26} />
+          ),
+        }}
+      />
 
+      <Tab.Screen
+        name="Profile"
+        component={AboutScreen}
+        options={{
+          tabBarLabel: 'Profile',
+          tabBarColor: '#694fad',
+          tabBarIcon: ({ color }) => (
+            <Icon name="ios-person" color={color} size={26} />
+          ),
+        }}
+      />
+    
+    </Tab.Navigator>
         <View style={{}}>
           <Image
             style={styles.top_image}
@@ -57,7 +124,9 @@ export default function Home({ navigation }) {
           numColumns={1}
           data={dashes}
           renderItem={({ item }) => <Card item_={item} />} />
-      </SafeAreaView>
+      <View style={styles.footer}>
+      </View>
+      </View>
       // </ScrollView>
   );
 }
@@ -73,6 +142,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 0,
     backgroundColor: 'white',
     
+  },
+  lists:{
+    color: 'cyan'
   },
 
   top_image: {
@@ -96,6 +168,11 @@ const styles = StyleSheet.create({
     shadowOpacity: 1
 
     
+  },
+  footer:{
+    flex: 8,
+    backgroundColor: 'black'
+
   }
 
   });

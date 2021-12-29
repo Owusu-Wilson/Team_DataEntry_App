@@ -1,12 +1,12 @@
 {
   "expo": {
-    "name": "Gnome",
-    "slug": "Gnome",
+    "name": "teamSync",
+    "slug": "teamSync",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
     ],
     "description": ""
   },
-  "name": "Gnome"
+  "name": "teamSync"
 }
